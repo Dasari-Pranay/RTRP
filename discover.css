@@ -1,0 +1,141 @@
+/* Basic Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header Styling */
+.header {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #325b99, #414777);
+  color: white;
+  border-bottom: 5px solid #f4f4f4;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.header h1 {
+  font-size: 3.5em;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.header p {
+  font-size: 1.3em;
+  margin: 15px 0;
+}
+
+/* Section Styling */
+.discover-content {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Destination Details */
+#destination-details {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+#destination-details.hidden {
+  display: none;
+}
+
+#destination-details h3 {
+  font-size: 2em;
+  color: #444;
+  margin-top: 20px;
+}
+
+#destination-details p {
+  font-size: 1.2em;
+  color: #777;
+}
+
+/* Photo Gallery */
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.gallery img {
+  display: block;
+  width: 22%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1; /* Ensure opacity is 1 */
+  transform: scale(1); /* Ensure scale is normal */
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Map Styling */
+.map-container h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.review {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.review img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-content {
+  flex-grow: 1;
+}
+
+.review h3 {
+  color: #333;
+  margin: 0;
+}
+
+.review p {
+  font-size: 1.1em;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

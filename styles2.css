@@ -1,0 +1,132 @@
+/* General reset and layout setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    background-image: url('images/price.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+}
+
+.price-box {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.price-box h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.price-box .price {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.price-box .description {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Styling for Average Price */
+.average-price {
+    border-left: 5px solid #3498db;
+    background-color: #ecf6fd;
+}
+
+/* Styling for Premium Price */
+.premium-price {
+    border-left: 5px solid #e74c3c;
+    background-color: #f9e6e6;
+}
+
+/* Hover effect for boxes */
+.price-box:hover {
+    transform: translateY(-5px);
+}
+
+.price-box:active {
+    transform: translateY(1px);
+}
+
+/* Book Now Button Styling */
+.book-now {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.book-now:hover {
+    background-color: #0056b3;
+}
+
+.book-now:active {
+    transform: scale(0.95);
+}
+
+/* Animation for form sliding in */
+@keyframes formSlideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for fading text up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for background change */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

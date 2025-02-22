@@ -1,0 +1,115 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url('images/login.jpg') no-repeat center center fixed; /* Set the background image */
+    background-size: cover;
+    animation: backgroundAnimation linear infinite;
+}
+
+/* Login Box */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    animation: boxAnimation 1s ease-out;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* Textboxes */
+.textbox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    transition: transform 0.3s ease;
+}
+
+.textbox input:focus {
+    transform: scale(1.05);
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #feb47b;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes boxAnimation {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Touch animations (for touch devices) */
+@media (max-width: 767px) {
+    .textbox input, button {
+        transform: scale(1.1);
+    }
+    
+    .textbox input:focus, button:hover {
+        transform: scale(1.15);
+    }
+}

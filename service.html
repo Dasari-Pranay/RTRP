@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guides</title>
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+    <header>
+        <h1>Meet Our Travel Guides</h1>
+    </header>
+
+    <section class="guides">
+        <!-- Guide 1 -->
+        <div class="guide">
+            <img src="images/goa12.jpg" alt="Goa Guide" class="guide-img">
+            <div class="guide-info">
+                <h3>Goa - John Doe</h3>
+                <p><strong>Phone:</strong> +91 9876543210</p>
+                <p><strong>Experience:</strong> 10 years</p>
+                <p><strong>Prices:</strong> Rs 1500/- (Half-Day), Rs 2700/- (Full-Day)</p>
+            </div>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="guide">
+            <img src="images/keralashiva.jpg" alt="Kerala Guide" class="guide-img">
+            <div class="guide-info">
+                <h3>Kerala - ShivaKamala</h3>
+                <p><strong>Phone:</strong> +91 9876543211</p>
+                <p><strong>Experience:</strong> 6 years</p>
+                <p><strong>Prices:</strong> Rs 3000/- (Half-Day), Rs 5000/- (Full-Day)</p>
+            </div>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="guide">
+            <img src="images/jaipur23.jpg" alt="Jaipur Guide" class="guide-img">
+            <div class="guide-info">
+                <h3>Jaipur - Rahul Sharma</h3>
+                <p><strong>Phone:</strong> +91 9876543212</p>
+                <p><strong>Experience:</strong> 8 years</p>
+                <p><strong>Prices:</strong> Rs 4500/- (Half-Day), Rs 9000/- (Full-Day)</p>
+            </div>
+        </div>
+
+        <!-- Guide 4 -->
+        <div class="guide">
+            <img src="images/du-bai.jpg" alt="Dubai Guide" class="guide-img">
+            <div class="guide-info">
+                <h3>Dubai - Sara Khan</h3>
+                <p><strong>Phone:</strong> +971 50 1234567</p>
+                <p><strong>Experience:</strong> 5 years</p>
+                <p><strong>Prices:</strong> Rs 1700/- (Half-Day), Rs 3140/- (Full-Day)</p>
+            </div>
+        </div>
+
+        <!-- Guide 5 -->
+        <div class="guide">
+            <img src="images/paris.jpg" alt="Paris Guide" class="guide-img">
+            <div class="guide-info">
+                <h3>Paris - Pierre Dupont</h3>
+                <p><strong>Phone:</strong> +33 1 23 45 67 89</p>
+                <p><strong>Experience:</strong> 6 years</p>
+                <p><strong>Prices:</strong> Rs 800/- (Half-Day), Rs 1600/- (Full-Day)</p>
+            </div>
+        </div>
+         <!-- Guide 6 -->
+         <div class="guide">
+            <img src="images/bali.jpg" alt=" Bali Gudie" class="guide-img">
+            <div class="guide-info">
+                <h3>Bali - Thomas</h3>
+                <p><strong>Phone:</strong> +33 46 64 36 44</p>
+                <p><strong>Experience:</strong> 13 years</p>
+                <p><strong>Prices:</strong> Rs 4000 (Half-Day), Rs 10000/- (Full-Day)</p>
+            </div>
+        </div>
+    </div>
+    <!-- Guide 7 -->
+    <div class="guide">
+       <img src="images/maldives.jpg" alt="Maldives guide" class="guide-img">
+       <div class="guide-info">
+           <h3>Maldives - Muhanif</h3>
+           <p><strong>Phone:</strong> +22 34 56 78 87</p>
+           <p><strong>Experience:</strong> 3 years</p>
+           <p><strong>Prices:</strong> Rs 1169/- (Half-Day), Rs 2190/- (Full-Day)</p>
+       </div>
+   </div>
+    <!-- Guide 8 -->
+    <div class="guide">
+        <img src="images/sydney.jpg" alt="sydney guide" class="guide-img">
+        <div class="guide-info">
+            <h3>Sydney- Santanu D</h3>
+            <p><strong>Phone:</strong> +67 77 78 89 40</p>
+            <p><strong>Experience:</strong> 12 years</p>
+            <p><strong>Prices:</strong> Rs 1700/- (Half-Day), Rs 3190/- (Full-Day)</p>
+        </div>
+    </div>
+    </section>
+
+   
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Travel Planner</h1>
+
+        <!-- Flight Booking Section -->
+        <section id="flight-booking">
+            <h2>Book Flight</h2>
+            <form id="flight-form">
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" required>
+
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" required>
+
+                <label for="departure-date">Departure Date:</label>
+                <input type="date" id="departure-date" required>
+
+                <label for="return-date">Return Date (optional):</label>
+                <input type="date" id="return-date">
+
+                <button type="submit">Book Flight</button>
+            </form>
+        </section>
+
+        <!-- Hotel Booking Section -->
+        <section id="hotel-booking">
+            <h2>Book Hotel</h2>
+            <form id="hotel-form">
+                <label for="hotel-location">Location:</label>
+                <input type="text" id="hotel-location" required>
+
+                <label for="check-in-date">Check-in Date:</label>
+                <input type="date" id="check-in-date" required>
+
+                <label for="check-out-date">Check-out Date:</label>
+                <input type="date" id="check-out-date" required>
+
+                <button type="submit">Book Hotel</button>
+            </form>
+        </section>
+
+        <!-- Car Rental Section -->
+        <section id="car-rental">
+            <h2>Book Car Rental</h2>
+            <form id="car-form">
+                <label for="pickup-location">Pickup Location:</label>
+                <input type="text" id="pickup-location" required>
+
+                <label for="pickup-date">Pickup Date:</label>
+                <input type="date" id="pickup-date" required>
+
+                <label for="return-date">Return Date:</label>
+                <input type="date" id="return-date-car" required>
+
+                <button type="submit">Book Car</button>
+            </form>
+        </section>
+
+        <!-- Itinerary Section -->
+        <section id="itinerary">
+            <h2>Your Itinerary</h2>
+            <div id="itinerary-list"></div>
+        </section>
+    </div>
+
+    <script src="script4.js"></script>
+    <footer>
+        <p>&copy; 2025 Travel Guides. All rights reserved.</p>
+    </footer>
+</body>
+</html>

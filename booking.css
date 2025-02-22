@@ -1,0 +1,51 @@
+/* Booking Success Message Styling */
+#successMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 1000;
+    text-align: center;
+}
+
+#successMessage.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -52%) scale(1.1); }
+}
+
+/* Close Button */
+#closeSuccess {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: white;
+    color: #0072ff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#closeSuccess:hover {
+    background: #0072ff;
+    color: white;
+}
