@@ -1,45 +1,46 @@
 <?php
-session_start();
+header("Content-Type: application/json");
 
-// Database connection (Update credentials if needed)
-$servername = "localhost";
-$username = "root";
-$password = "";
+// Database connection
+$host = "localhost";  
+$user = "root";       
+$pass = "";           
 $dbname = "easy_trip"; // Ensure this database exists in your MySQL
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    echo json_encode(["success" => false, "message" => "Database connection failed"]);
+    exit;
 }
 
-// Form submission handling
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect and sanitize form data
-    $user_name = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+// Read JSON input
+$data = json_decode(file_get_contents("php://input"), true);
 
-    // Check if user exists
-    $sql = "SELECT * FROM users WHERE username = '$user_name'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        
-        // Verify password
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['user'] = $user_name;
-            echo json_encode(["status" => "success", "message" => "Login successful.", "redirect" => "index.html"]);
-        } else {
-            echo json_encode(["status" => "error", "message" => "Invalid username or password."]);
-        }
-    } else {
-        echo json_encode(["status" => "error", "message" => "Invalid username or password."]);
-    }
+// Validate input
+if (empty($data["username"]) || empty($data["password"])) {
+    echo json_encode(["success" => false, "message" => "Username and password required"]);
+    exit;
 }
 
-// Close connection
+$username = trim($data["username"]);
+$password = trim($data["password"]);
+
+// Check if user exists
+$sql = "SELECT * FROM users WHERE username = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+if ($user && password_verify($password, $user["password"])) {
+    echo json_encode(["success" => true, "message" => "Login successful"]);
+} else {
+    echo json_encode(["success" => false, "message" => "Invalid username or password"]);
+}
+
+$stmt->close();
 $conn->close();
 ?>
