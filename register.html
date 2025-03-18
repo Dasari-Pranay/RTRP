@@ -3,34 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <link rel="stylesheet" href="styles1.css">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+        }
+
+        .box {
+            width: 350px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px #00ffcc;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #ff0000, #ff7300, #ff00ff, #007bff, #00ffcc, #ff0000);
+            background-size: 400%;
+            border-radius: 15px;
+            z-index: -1;
+            animation: borderAnimation 5s linear infinite;
+        }
+
+        @keyframes borderAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .inputbox {
+            position: relative;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .inputbox input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #00ffcc;
+            background: transparent;
+            outline: none;
+            color: #fff;
+            font-size: 1em;
+            transition: 0.5s;
+        }
+
+        .inputbox label {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .inputbox input:focus ~ label,
+        .inputbox input:valid ~ label {
+            top: -10px;
+            color: #00ffcc;
+            font-size: 12px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #00ffcc;
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background: #00d4ff;
+            box-shadow: 0 0 10px #00d4ff;
+        }
+
+        .register {
+            color: white;
+            margin-top: 20px;
+        }
+
+        .register p a {
+            text-decoration: none;
+            color: #00ffcc;
+            font-weight: 700;
+        }
+        @media (max-width: 400px) {
+            .box {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h1>Register</h1>
-            <form id="registerForm" action="./register.php" method="POST">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required name="username"/>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required name="email"/>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required name="password"/>
-                </div>
-                <div class="input-group">
-                    <label for="confirmpassword">Confirm Password</label>
-                    <input type="password" id="confirmpassword" name="confirmpassword" required name="confirmpassword">
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
+    <div class="box">
+        <form action="register.php" method="POST">
+            
+            <h2>Register</h2>
+            <div class="inputbox">
+                <input type="text" name="username" required>
+                <label>Username:</label>
+            </div>
+            <div class="inputbox">
+                <input type="email" name="email" required>
+                <label>Email:</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password" required>
+                <label>Password:</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="confirmpassword" required>
+                <label>Confirm Password:</label>
+            </div>
+            <button class="btn" type="submit">Register</button>
+            
+            <div class="register">
+                <p>Already have an account? <a href="./login.html">Login</a></p>
+            </div>
+        </form>
     </div>
-    <script src="script1.js"></script>
 </body>
 </html>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+        let password = document.querySelector('input[type="password"]').value;
+        let confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            e.preventDefault();
+        }
+    });
+</script>
