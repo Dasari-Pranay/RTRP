@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Modern Animated Login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login.js" defer></script> <!-- JavaScript for handling login -->
 </head>
 <body>
-    <div class="container">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form id="loginForm" action="./login.php" method="post">
-                <div class="textbox">
-                    <input type="text" placeholder="Username" id="username" name="username" required>
-                </div>
-                <div class="textbox">
-                    <input type="password" placeholder="Password" id="password" name="password" required>
-                </div>
-                <button type="submit" id="login-btn">Login</button>
-            </form>
-        </div>
-    </div>
 
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            var formData = new FormData(this);
-            
-            fetch("login.php", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert("Login successful! Redirecting to home page...");
-                window.location.href = "index.html";
-            })
-            .catch(error => console.error("Error:", error));
-        });
-    </script>
+<div class="box">
+  <div class="login">
+    <div class="loginBx">
+      <form action="login.php" method="post"></form>
+      <h2>
+        <i class="fa-solid fa-right-to-bracket"></i>
+        Login
+        <i class="fa-solid fa-heart"></i>
+      </h2>
+
+      <form id="loginForm">
+        <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Sign in">
+      </form>
+
+      <p id="loginMessage" style="color: white; text-align: center; font-weight: bold;"></p>
+
+      <div class="group">
+        <a href="#">Forgot Password</a>
+        <a href="./register.html">Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
